@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"application.css"}
+{"version":3,"sources":["../scss/themes/_effects.scss"],"names":[],"mappings":"AAAA,WACI,mBAAA,CACA,iBACI,mBAAA","file":"application.css","sourcesContent":[".img__grey {\n    filter: grayscale(1);\n    &:hover {\n        filter: grayscale(0);\n    }\n}"]}
