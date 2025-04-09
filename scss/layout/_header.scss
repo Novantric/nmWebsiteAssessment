@@ -1,0 +1,44 @@
+@import "/assets/iconmoon/style.css";
+
+.nav-item {
+    font-family: icomoon;
+    display: inline-block;
+    margin-right: 16px;
+    text-align: center;
+    
+
+    small {
+        font-size: x-small;
+        display: block;
+        color: red;;
+    }
+}
+
+.nav-icon--sof::before {
+    content: "\e900";
+}
+
+.nav-icon--sup::before {
+    content: "\e900";
+}
+
+.nav-icon--mar::before {
+    content: "\e900";
+}
+
+.nav-icon--ser::before {
+    content: "\e900";
+    color: red;
+}
+
+.nav-icon--des::before {
+    content: "\e900";
+}
+
+.nav-icon--sec::before {
+    content: "\e900";
+}
+
+.nav-icon--cou::before {
+    content: "\e900";
+}
