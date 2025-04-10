@@ -1,17 +1,54 @@
 @import "/assets/iconmoon/style.css";
 
+header {
+    align-items: center;
+}
+
+
+.main-heading {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+    margin: 10px;
+}
+
+.header-logo {
+}
+
+.main-nav {
+    background-color: $color-secondary;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: auto;
+}
 .nav-item {
     font-family: icomoon;
     display: inline-block;
-    margin-right: 16px;
+    margin-right: 60px;
     text-align: center;
-    
 
     small {
         font-size: x-small;
         display: block;
-        color: red;;
     }
+
+    ul {
+        padding: 0;
+    }
+
+    &:hover {
+        .sub-nav-list {
+            display: block;
+        }
+    }
+}
+
+.sub-nav-list {
+    display: none;
 }
 
 .nav-icon--sof::before {
@@ -41,4 +78,20 @@
 
 .nav-icon--cou::before {
     content: "\e900";
+}
+
+@media (max-width: $screen-large){
+    #searchbox {
+        display: none;
+    }
+
+
+}
+
+@media (max-width: $screen-medium) {
+    #button-support,
+    #button-contact,
+    #button-search {
+        display: none;
+    }
 }

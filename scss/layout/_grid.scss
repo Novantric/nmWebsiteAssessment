@@ -2,3 +2,49 @@
 
 // Use a combination of flexbox and grid
 
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr auto;
+    grid-template-areas: 
+    "header sidebar"
+    "main sidebar"
+    "footer sidebar";
+}
+
+
+header {
+    grid-area: header;
+    height: 3rem;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+main {
+    grid-area: main;
+}
+
+
+aside {
+    grid-area: sidebar;
+
+    right: 0;
+    height: 100vh;
+    overflow: auto;
+    text-wrap: wrap;
+    background-color: #333645;
+
+    width: 300px;
+    position: fixed;
+    display: none;
+}
+
+.showSidebar {
+    display: block;
+}
+
+footer {
+    grid-area: footer;
+}
