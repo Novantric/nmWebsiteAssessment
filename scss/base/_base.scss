@@ -5,5 +5,23 @@ body {
     margin-right: 3%;
 }
 
+.section-heading {
+    display: grid;
+    grid-template-columns: 1fr auto;
 
+    h1, h2 {
+        margin: 0;
+    }
+}
 
+.content-items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.major {
+    flex-grow: 2;
+}
+.minor {
+    flex-grow: 1;
+}

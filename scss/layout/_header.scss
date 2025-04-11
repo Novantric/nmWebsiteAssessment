@@ -2,9 +2,14 @@
 
 header {
     align-items: center;
+    a { 
+        color: inherit; 
+        text-decoration-line: none;
+    } 
+    z-index: 10;
 }
 
-
+// Top part with logo
 .main-heading {
     display: flex;
     flex-direction: row;
@@ -17,6 +22,7 @@ header {
 .header-logo {
 }
 
+// Bottom part with nav elements
 .main-nav {
     background-color: $color-secondary;
     color: white;
@@ -28,7 +34,7 @@ header {
 .nav-item {
     font-family: icomoon;
     display: inline-block;
-    margin-right: 60px;
+    margin-right: 3em;
     text-align: center;
 
     small {
@@ -38,47 +44,49 @@ header {
 
     ul {
         padding: 0;
+        margin-top: 2em;
+        list-style: none;
+        text-align: left;
     }
 
-    &:hover {
-        .sub-nav-list {
-            display: block;
-        }
+
+}
+
+// Nav icons
+
+.main-nav-list{
+    #sof::before {
+        content: "\e900";
+    }
+    
+    #sup::before {
+        content: "\e900";
+    }
+
+    #mar::before {
+        content: "\e900";
+    }
+
+    #ser::before {
+        color: red;
+        content: "\e900";
+    }
+
+    #des::before {
+        content: "\e900";
+    }
+
+    #sec::before {
+        content: "\e900";
+    }
+
+    #cou::before {
+        content: "\e900";
     }
 }
 
-.sub-nav-list {
-    display: none;
-}
 
-.nav-icon--sof::before {
-    content: "\e900";
-}
 
-.nav-icon--sup::before {
-    content: "\e900";
-}
-
-.nav-icon--mar::before {
-    content: "\e900";
-}
-
-.nav-icon--ser::before {
-    content: "\e900";
-    color: red;
-}
-
-.nav-icon--des::before {
-    content: "\e900";
-}
-
-.nav-icon--sec::before {
-    content: "\e900";
-}
-
-.nav-icon--cou::before {
-    content: "\e900";
-}
 
 @media (max-width: $screen-large){
     #searchbox {
