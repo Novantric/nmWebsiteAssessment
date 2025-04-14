@@ -1,1 +1,5 @@
 // OPTIONAL, changes based on mobile layout and moves things on overflow
+button, input[type="submit"] {
+    @include buttonstyles;
+    background-color: $colour-primary-dark;
+}

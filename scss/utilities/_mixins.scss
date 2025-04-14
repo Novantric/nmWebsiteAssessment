@@ -1,6 +1,11 @@
 // Include reusable mixins here
 
-@mixin centerHorizontally {
-
+@mixin buttonstyles {
+    text-transform: uppercase;
+    width: fit-content;
+    height: 62px;
+    color: white;
+    border: none;
+    border-radius: 5px;
 }
 
