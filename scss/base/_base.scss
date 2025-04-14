@@ -1,4 +1,7 @@
 // background colour, theme switcher, page styles ect.
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin-left: 3%;
@@ -14,6 +17,20 @@ body {
     }
 }
 
+// Banner
+.banner {
+    width: 100%;
+    margin-right: 0px;
+
+    .banner-item {
+    }
+    .active {
+        background-image: url("/img/banner/home-6yTp.webp");
+        height: 60px;
+    }
+}
+
+// Services
 .content-items {
     display: flex;
     flex-wrap: wrap;

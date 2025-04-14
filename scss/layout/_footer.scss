@@ -1,5 +1,5 @@
 footer {
-    background-color: $color-secondary;
+    background-color: $color-primary;
     color: white;
     img {
         filter: invert(100%) brightness(2);
@@ -61,7 +61,7 @@ footer {
 
     .footer-copyright {
         display: inline-block;
-        background-color: $colour-secondary-dark;
+        background-color: $colour-primary-dark;
         width: 100%;
         text-align: center;
     }

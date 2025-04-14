@@ -9,3 +9,7 @@ $font-links: (
 
 // Font family
 $font-family--primary: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+* {
+    font-family: $font-family--primary;
+}
