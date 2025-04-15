@@ -1,112 +1,161 @@
 @import "/assets/iconmoon/style.css";
 
 header {
-    align-items: center;
+    position: relative;
+    
     a { 
         color: inherit; 
-        text-decoration-line: none;
-    } 
-    z-index: 10;
+    }
 
-
+    ul {
+        list-style: none;
+    }
 }
 
 // Top part with logo
 .main-heading {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: stretch;
-    margin: 10px;
+    height: 11dvh;
 
-    button, input[type="submit"] {
+    .container {
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+    }
+
+    button, #button-search {
         @include buttonstyles;
-        background-color: $color-accent;
+        background-color: $color-button-grey;
+        height: 56px;
+        flex-grow: 1;
+    }
+    #searchbox {
+        width: 200px;
+        flex-grow: 2;
+        height: 56px;
+    }
+    #button-support {
+        background-color: $color-button-support;
+    }
+    #header-logo {
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 }
 
-.header-logo {
-}
-
-// Bottom part with nav elements
+// Navigation buttons
 .main-nav {
     background-color: $color-primary;
     color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: auto;
-}
-.nav-item {
-    font-family: icomoon;
-    display: inline-block;
-    margin-right: 3em;
-    text-align: center;
 
-    small {
-        font-size: x-small;
-        display: block;
-    }
+    .main-nav-list {
 
-    ul {
+        display: flex;
+        justify-content: space-between;
         padding: 0;
-        margin-top: 2em;
-        list-style: none;
-        text-align: left;
+        margin: 0;
     }
 
+    .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        flex-grow: 1;
 
+        // Submenu popup
+        &:hover {
+            .submenu-banner {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            }
+        }
+
+        // Nav item text
+        a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+
+            small {
+                font-size: x-small;
+                margin-bottom: 0.25rem;
+                display: block;
+                margin-bottom: 0.25rem;
+            }
+        }
+
+        // Popup submenu
+        .submenu-banner {
+            display: none;
+            position: absolute;
+
+            top: calc(5.6em + 10dvh);
+            left: 0;
+            right: auto;
+
+            width: 100dvw;
+            padding: 2rem;
+            
+            .submenu-content {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+                max-width: $screen-large;
+                margin: auto;
+                justify-items: start;
+                li {
+                    padding: 0.5rem;
+                    break-inside: avoid;
+                    
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+            
+        }
+        
+        // Nav colours and icons
+        &::before {
+            font-family: icomoon;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+        &#sof { @include nav-item-colors($colour-sof); }
+        &#sup { @include nav-item-colors($colour-sup); }
+        &#mar { @include nav-item-colors($colour-mar); }
+        &#ser { @include nav-item-colors($colour-ser); }
+        &#des { @include nav-item-colors($colour-des); }
+        &#sec { @include nav-item-colors($colour-sec); }
+        &#cou { @include nav-item-colors($colour-dev); }
+
+        &#sof::before { content: "\e900"; }
+        &#sup::before { content: "\e901"; }
+        &#mar::before { content: "\e900"; }
+        &#ser::before { content: "\e900"; }
+        &#des::before { content: "\e900"; }
+        &#sec::before { content: "\e900"; }
+        &#cou::before { content: "\e900"; }
+
+    }
 }
-
-// Nav icons
-
-.main-nav-list{
-    #sof::before {
-        content: "\e900";
-    }
-    
-    #sup::before {
-        content: "\e900";
-    }
-
-    #mar::before {
-        content: "\e900";
-    }
-
-    #ser::before {
-        color: red;
-        content: "\e900";
-    }
-
-    #des::before {
-        content: "\e900";
-    }
-
-    #sec::before {
-        content: "\e900";
-    }
-
-    #cou::before {
-        content: "\e900";
-    }
-}
-
-
-
 
 @media (max-width: $screen-large){
     #searchbox {
         display: none;
     }
-
-
 }
 
-@media (max-width: $screen-medium) {
+@media (max-width: $screen-medium-header) {
     #button-support,
     #button-contact,
     #button-search {
         display: none;
     }
+
+
 }

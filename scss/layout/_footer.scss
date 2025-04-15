@@ -1,6 +1,9 @@
 footer {
     background-color: $color-primary;
     color: white;
+    padding: 30px 0 0;
+    position: relative;
+    
     img {
         filter: invert(100%) brightness(2);
         display: block;

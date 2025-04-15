@@ -7,5 +7,21 @@
     color: white;
     border: none;
     border-radius: 5px;
+    margin: 5px;
 }
 
+@mixin nav-item-colors($color) {
+    &:hover {
+        background-color: $color;
+        &::before {
+            color: white;
+        }    
+    }
+    
+    &::before {
+        color: $color;
+    }
+    .submenu-banner {
+        background-color: darken($color, 10%);
+    }
+}

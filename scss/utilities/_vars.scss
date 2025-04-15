@@ -1,12 +1,23 @@
 // GLOBAL VARIABLES USED BY THE WHOLE PROJECT
 
 // MEDIA/SCREEN SIZE
-$screen-small: 50px;
-$screen-medium: 768px; //Mobile
-$screen-large: 1260px;
+$screen-small: 750px;
+$screen-medium-header: 768px;
+$screen-medium: 992px;
+$screen-large: 1200px;
 
 // COLOURS
 $color-primary: #323544;
 $colour-primary-dark: #212330;
 $color-sidebar: #333645;
 $color-accent: rgb(146, 111, 177);
+
+$color-button-support: #4183d7;
+$color-button-grey: #999aa2;
+$colour-sof: rgb(103, 128, 159);
+$colour-sup: rgb(65, 131, 215);
+$colour-mar: rgb(46, 204, 113);
+$colour-ser: rgb(214, 69, 65);
+$colour-des: rgb(146, 111, 177);
+$colour-sec: rgb(246, 36, 89);
+$colour-dev: rgb(206, 65, 37);
