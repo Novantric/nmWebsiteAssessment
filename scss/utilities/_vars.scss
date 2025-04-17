@@ -14,6 +14,7 @@ $color-accent: rgb(146, 111, 177);
 
 $color-button-support: #4183d7;
 $color-button-grey: #999aa2;
+
 $colour-sof: rgb(103, 128, 159);
 $colour-sup: rgb(65, 131, 215);
 $colour-mar: rgb(46, 204, 113);
@@ -21,3 +22,7 @@ $colour-ser: rgb(214, 69, 65);
 $colour-des: rgb(146, 111, 177);
 $colour-sec: rgb(246, 36, 89);
 $colour-dev: rgb(206, 65, 37);
+
+$color-dot-inactive: hsla(0,0%,100%,.5);
+$color-dot-hover: darken($color-dot-inactive, 25%);
+$color-dot-active: white;

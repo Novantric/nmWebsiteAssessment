@@ -2,7 +2,8 @@
 
 header {
     position: relative;
-    
+    margin-bottom: 150px;
+
     a { 
         color: inherit; 
     }
@@ -15,7 +16,7 @@ header {
 // Top part with logo
 .main-heading {
     display: flex;
-    height: 11dvh;
+    height: 110px;
 
     .container {
         justify-content: space-between;
@@ -45,6 +46,7 @@ header {
 
 // Navigation buttons
 .main-nav {
+    height: 100px;
     background-color: $color-primary;
     color: white;
 
@@ -81,10 +83,8 @@ header {
             text-decoration: none;
 
             small {
-                font-size: x-small;
-                margin-bottom: 0.25rem;
+                font-size: xx-small;
                 display: block;
-                margin-bottom: 0.25rem;
             }
         }
 
@@ -93,11 +93,11 @@ header {
             display: none;
             position: absolute;
 
-            top: calc(5.6em + 10dvh);
+            top: 210px;
             left: 0;
             right: auto;
 
-            width: 100dvw;
+            width: 100%;
             padding: 2rem;
             
             .submenu-content {
