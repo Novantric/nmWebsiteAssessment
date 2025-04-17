@@ -1,5 +1,85 @@
 // OPTIONAL, changes based on mobile layout and moves things on overflow
-button, input[type="submit"] {
-    @include buttonstyles;
-    background-color: $colour-primary-dark;
+
+aside {
+    width: 260px;
+
+    background-color: $colour-primary-light;
+
+    .container {
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    button, input[type="submit"] {
+        @include buttonstyles;
+        height: 50px;
+        width: 100%;
+        background-color: $colour-primary-light;
+        border: 1px solid $color-button-border;
+    }
+
+    ul {
+        background-color: $colour-primary-dark;
+    }
+    
+    //menu items
+    .nav-item {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-grow: 1;
+    
+        padding-top: 1em;
+        padding-bottom: 1em;
+
+        border: 1px solid $color-button-border;
+        border-radius: 3px;
+    
+        // Nav item text
+        a {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+    
+            small {
+                font-size: xx-small;
+                display: block;
+            }
+        }
+        // Nav colours and icons
+        &::before {
+            font-family: icomoon;
+            font-size: 1rem;
+        }
+        &#sof { @include nav-item-colors($colour-sof); }
+        &#sup { @include nav-item-colors($colour-sup); }
+        &#mar { @include nav-item-colors($colour-mar); }
+        &#ser { @include nav-item-colors($colour-ser); }
+        &#des { @include nav-item-colors($colour-des); }
+        &#sec { @include nav-item-colors($colour-sec); }
+        &#cou { @include nav-item-colors($colour-dev); }
+    
+        &#sof::before { content: "\e900"; }
+        &#sup::before { content: "\e901"; }
+        &#mar::before { content: "\e900"; }
+        &#ser::before { content: "\e900"; }
+        &#des::before { content: "\e900"; }
+        &#sec::before { content: "\e900"; }
+        &#cou::before { content: "\e900"; }
+    }
+    
+    @media (min-width: $screen-medium) {
+        #button-contact {
+            display: none;
+        }
+    }
 }
+

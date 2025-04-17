@@ -9,11 +9,14 @@ $screen-large: 1200px;
 // COLOURS
 $color-primary: #323544;
 $colour-primary-dark: #212330;
+$colour-primary-light: #333645;
+
 $color-sidebar: #333645;
 $color-accent: rgb(146, 111, 177);
 
 $color-button-support: #4183d7;
 $color-button-grey: #999aa2;
+$color-button-border: rgba(255, 255, 255, 0.1);
 
 $colour-sof: rgb(103, 128, 159);
 $colour-sup: rgb(65, 131, 215);
@@ -23,6 +26,6 @@ $colour-des: rgb(146, 111, 177);
 $colour-sec: rgb(246, 36, 89);
 $colour-dev: rgb(206, 65, 37);
 
-$color-dot-inactive: hsla(0,0%,100%,.5);
+$color-dot-inactive: hsla(0,0%,100%,.5); 
 $color-dot-hover: darken($color-dot-inactive, 25%);
 $color-dot-active: white;

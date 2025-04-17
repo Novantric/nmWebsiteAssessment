@@ -41,6 +41,7 @@ header {
     #header-logo {
         margin-top: 10px;
         margin-bottom: 10px;
+        margin-right: 1em;
     }
 }
 
@@ -150,12 +151,32 @@ header {
     }
 }
 
-@media (max-width: $screen-medium-header) {
-    #button-support,
-    #button-contact,
-    #button-search {
-        display: none;
+@media (max-width: $screen-medium) {
+    header{
+        margin-bottom: 50px;
+
+        #button-support,
+        #button-contact {
+            display: none;
+        }
+        #searchbox {
+            width: auto;
+        }
+    
+        .main-heading{
+            margin: 0;
+        }
+        .main-nav {
+            display: none;
+        }
     }
+}
 
-
+@media (max-width: $screen-small) {
+    header {
+        #searchbox,
+        #button-search {
+            display: none;
+        }
+    }
 }
