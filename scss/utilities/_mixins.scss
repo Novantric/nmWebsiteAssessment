@@ -1,14 +1,22 @@
 // Include reusable mixins here
 
-@mixin buttonstyles {
+@mixin buttonstyles($background-colour: null) {
     text-transform: uppercase;
     width: fit-content;
     height: 62px;
     color: white;
+    background-color: $background-colour;
     border: none;
     border-radius: 3px;
     margin: 5px;
     padding: 5px 20px;
+    cursor: pointer;
+    &:hover {
+        @if $background-colour {
+            background-color: darken($background-colour, 10%);
+            transition: 0.15s ease-in-out;
+        }
+    }
 }
 
 @mixin nav-item-colors($color) {

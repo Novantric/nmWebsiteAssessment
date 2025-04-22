@@ -1,1 +1,6 @@
 // @functions
+
+// Cool but only applies on compile
+@function randomColour() {
+    @return rgb(random(255), random(255), random(255));
+}

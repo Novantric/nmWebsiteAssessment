@@ -15,10 +15,9 @@ aside {
     }
 
     button, input[type="submit"] {
-        @include buttonstyles;
+        @include buttonstyles($colour-primary-light);
         height: 50px;
         width: 100%;
-        background-color: $colour-primary-light;
         border: 1px solid $color-button-border;
     }
 

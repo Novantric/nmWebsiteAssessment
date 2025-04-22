@@ -4,8 +4,7 @@
     flex-wrap: wrap;
 
     button {
-        @include buttonstyles;
-        background-color: wheat;
+        @include buttonstyles(blue);
     }
 }
 

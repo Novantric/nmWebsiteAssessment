@@ -10,6 +10,6 @@ $font-links: (
 // Font family
 $font-family--primary: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-* {
+*, button {
     font-family: $font-family--primary;
 }

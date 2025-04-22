@@ -1,9 +1,9 @@
 footer {
     background-color: $color-primary;
     color: white;
-    padding: 30px 0 0;
     position: relative;
     
+    // All images in the footer will get inverted and brightened
     img {
         filter: invert(100%) brightness(2);
         display: block;
@@ -11,67 +11,115 @@ footer {
 
     h1 {
         text-transform: uppercase;
-        font-size: medium;
+        font-weight: 400;
+        font-size: smaller;
         text-align: left;
+        margin-bottom: 20px;
     }
 
     ul {
+        font-size: x-small;
+        line-height: 1.1rem;
         list-style: none;
         text-align: left;
         padding: 0;
+        font-weight: 350;
+        :hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
     }
+}
+
+#footer-logo {
+    width: 16em;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+
+    gap: 1.25em;
+}
+
+.footer-links--follow {
+    display: flex;
+    flex-direction: column;
 
 
-
-
-    .footer-links {
+    .footer-links--follow-buttons {
         display: flex;
-        flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
-        align-content: stretch;
-        flex-grow: 2;
     }
 
-    #footer-logo {
-        margin-top: 10px;
-        order: 1;
-        max-width: 100%;
+    a {
+        @include buttonstyles($colour-primary-dark);
+        display: flex;
+        width: 72px;
+        height: 64px;
+        text-decoration: none;
+        
+        // Centre icons
+        display: grid;
+        place-items: center;
+        justify-content: center;
+    }
+}
+
+.footer-links--section {
+    padding-top: 32.5px;
+    padding-bottom: 32.5px;
+    image {
+        width: 100%;
         height: auto;
     }
 
-    .footer-links--follow {
+    &.footer-links--firstsection {
+        flex-grow: 2;
+    }
+}
 
-        order: 2;
-        button{
-            display: inline-flex;
-            flex-direction: row;
-            justify-content: space-between;
-            width: 72px;
-            max-width: 35%;
-            height: 64px;
+.footer-copyright {
+    background-color: $colour-primary-dark;
+    width: 100%;
+    padding: 4px;
+    text-align: left;
+    font-size: xx-small;
+
+    a {
+        color: white;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
         }
+    }
+}
 
+@media (max-width: $screen-large) {
+
+    #footer-logo {
+        padding-top: 20px;
+    }
+    .footer-links--section {
+        padding: 0px;
+        padding-bottom: 15px;
+        min-width: 20%;
+        &.footer-links--firstsection {
+            min-width: 100%;
+        }
+    }
+}
+
+@media (max-width: $screen-medium) {
+    .footer-links--section{
+        max-width: calc(50% - 4px);
     }
 
     .footer-links--section {
-        margin: 15px;
-        order: 3;
-        max-width: 35%;
-        align-items: stretch;
-    }
-
-
-    .footer-copyright {
-        display: inline-block;
-        background-color: $colour-primary-dark;
-        width: 100%;
-        text-align: center;
-    }
-
-    @media (max-width: $screen-medium) {
-        .footer-links--section{
-            max-width: calc(50% - 4px);
-        }
+        min-width: 45%;
     }
 }
