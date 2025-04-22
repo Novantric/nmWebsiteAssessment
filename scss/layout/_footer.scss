@@ -1,6 +1,6 @@
 footer {
     background-color: $color-primary;
-    color: white;
+    color: $white;
     position: relative;
     
     // All images in the footer will get inverted and brightened
@@ -53,21 +53,25 @@ footer {
 
     .footer-links--follow-buttons {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: wrap;   
     }
 
     a {
         @include buttonstyles($colour-primary-dark);
+        @include buttoniconstyles;
         display: flex;
         width: 72px;
         height: 64px;
-        text-decoration: none;
-        
-        // Centre icons
-        display: grid;
-        place-items: center;
-        justify-content: center;
     }
+
+    .follow-button {
+        transition: 0.15s ease-in-out;
+    }
+
+    #follow-fb { &:hover{background-color: $colour-social-fb} }
+    #follow-li { &:hover{background-color: $colour-social-li} }
+    #follow-tw { &:hover{background-color: $colour-social-tw} }
+    #follow-ig { &:hover{background-color: $colour-social-ig} }
 }
 
 .footer-links--section {
@@ -91,7 +95,7 @@ footer {
     font-size: xx-small;
 
     a {
-        color: white;
+        color: $white;
         text-decoration: none;
         &:hover {
             text-decoration: underline;

@@ -3,7 +3,6 @@
     filter: grayscale(1);
     &:hover {
         filter: grayscale(0);
+        transition: 0.15s ease-in-out;
     }
 }
-
-// ICON STYLES
