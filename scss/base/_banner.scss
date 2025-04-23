@@ -1,49 +1,61 @@
 // Banner
-.banner-roulette {
+#banner {
     width: 100%;
     height: 550px;
+}
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    // Background stuff here for now, should be in .active-banner
+.banner-item {
     background-position: center center; 
-    background-repeat: no-repeat;
-    background-image: linear-gradient(270deg, rgba(0, 0, 0, 0) 25%, rgb(0, 0, 0)),
-    url("https://www.netmatters.co.uk/assets/images/thumbnails/full_height_slideshow/home-YLei.webp");    
+    background-size: cover;
 }
 
 .banner-item-content {
-    display: flex;
-    flex-direction: column;
-
+    width: 100%;
+    height: 550px;
     color: $white;
-    
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }    
     h1, h2 {
         font-weight: 600;
     }
     h1 {
         margin-top: 1.5em;
         width: 80%;
-        font-size: 3rem;
+        font-size: 3.1rem;
         line-height: 3.5rem;
     }
     h2 {
         width: 75%;
         font-size: 1.3rem;
         line-height: 2rem;
+        margin-top: -1rem;
+    }
+    .banner-item-button {
+        &::after {
+            content: " ➙";
+        }
     }
 
     @media (max-width: $screen-large){
-        align-items: center;
-        margin-top: 3em;
-
+        h1 {
+            margin-top: 3rem;
+        }
+    }
+    @media (max-width: $screen-medium){
+        .container {
+            align-items: center;
+        }
         h1, h2 {
             width: 100%;
             text-align: center;
         }
         h1 {
+            margin-top: 6.5rem;
             font-size: 2rem;
             line-height: 1.25em;
         }
@@ -54,46 +66,43 @@
             padding-left: 2em;
             padding-right: 2em;
         }
-        button {
-            margin-left: auto;
-            margin-right: auto;
-        }
     }
 }
 
 // Set the banner's specific stuff here
 .active-banner {
-    button {
+    // Background
+    background-image: linear-gradient(270deg, rgba(0, 0, 0, 0) 25%, rgb(0, 0, 0)),
+    url("https://www.netmatters.co.uk/assets/images/thumbnails/full_height_slideshow/home-YLei.webp");  
+        
+    .banner-item-button {
         @include buttonstyles($color-accent);
-        margin-top: 1rem;
-        margin-bottom: 2rem;
         margin-left: 0;
-        &::after {
-            content: " ➙";
-        }
     }
 }
 
 // Banner switching dots
 .banner-dots {
     position: absolute;
-    top: 675px;
-    align-items: flex-end;
+    top: 685px;
+    left: 50%;
+    transform: translateX(-50%);
+    
     display: flex;
-    font-size: large;
+    justify-content: center;
+    gap: 7px;
+    
+    font-size: larger;
     text-align: center;
 
     @media (max-width: $screen-medium){
-        top: 575px;
+        top: 590px;
     }
 }
 
 .banner-dot {
     width: 1em;
     height: 1em;
-    color: $color-dot-inactive;
-    margin-left: 10px;
-    
     color: $color-dot-inactive;
     transition: color 0.1s ease;
 
