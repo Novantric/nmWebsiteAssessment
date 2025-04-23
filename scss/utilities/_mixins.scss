@@ -42,3 +42,21 @@
         background-color: darken($color, 10%);
     }
 }
+
+@mixin hoverColourChange($colour) {
+    background-color: $colour;
+    h3, p, .content-item__icon {
+        color: $white;
+    }
+    .content-item__icon {
+        background-color: $white;
+        width: 65px;
+        height: 65px;
+        color: $colour;
+        border-radius: 100%;
+    }
+    button {
+        color: $colour;
+        background-color: $white;
+    }
+}
