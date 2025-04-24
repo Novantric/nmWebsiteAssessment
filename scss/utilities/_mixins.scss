@@ -29,6 +29,7 @@
 
 @mixin nav-item-colors($color) {
     &:hover {
+        transition: 0.14s ease-in-out;
         background-color: $color;
         &::before {
             color: $white;
