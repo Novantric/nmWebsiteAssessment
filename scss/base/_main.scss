@@ -1,7 +1,7 @@
 main {
     display: flex;
     flex-direction: column;
-    gap: 75px;
+    gap: 50px;
 }
 
 // Services
@@ -13,9 +13,13 @@ main {
 }
 .content-items {
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: space-between;
     gap: 20px;
+
+    @media (max-width: $screen-medium) {
+        flex-direction: column;
+    }
 }
 
 .content-item-box {
@@ -28,9 +32,10 @@ main {
     height: 100%;
     padding: 20px;
 
-    border: 1px solid gray;
+    border: 1px solid $color-button-border;
     border-radius: 15px;
-    
+    box-shadow: 0px 0px 10px lighten($color-button-grey, 13%);
+
     h3, p {
         margin: 10px;
         font-weight: 300;
@@ -78,9 +83,10 @@ main {
         button { @include buttonstyles($colour-dev); }
     }
 
+
+
     &:hover {
         color: $white;
-        border: none;
 
         &#sof{ @include hoverColourChange($colour-sof); }
         &#sup{ @include hoverColourChange($colour-sup); }
@@ -95,9 +101,31 @@ main {
 
 }
 
+.major, .minor {
+    flex: 1 1 auto; // Allow items to grow/shrink
+    
+    // Remove min-width constraints
+    @media (max-width: $screen-medium) {
+        max-width: 100% !important;
+    }
+}
 .major {
     max-width: 370px;
+
+    @media (max-width: $screen-large) {
+        max-width: 300px;
+    }
+    @media (max-width: $screen-medium) {
+        min-width: 100%;
+    }
 }
 .minor {
     max-width: 270px;
+
+    @media (max-width: $screen-large) {
+        max-width: 220px;
+    }
+    @media (max-width: $screen-medium) {
+        min-width: 100%;
+    }
 }
