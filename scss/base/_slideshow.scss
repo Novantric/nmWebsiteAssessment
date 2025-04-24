@@ -1,0 +1,56 @@
+//Image slideshows
+
+.slideshow {
+    height: 170px;
+    // 100% overflows
+    width: 98%;
+
+    margin-left: 20px;
+    margin-right: 20px;
+    // Make this a block for the JS carousel
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.slideshow-element {
+    img {
+        width: 100%;
+        height: auto;
+        filter: grayscale(1);
+
+        &:hover {
+            transition: 0.2s ease-in-out;
+            filter: grayscale(0);
+            & ~ .slideshow-submenu-banner {
+                display: block;
+            }
+        }
+
+    }
+    .slideshow-submenu-banner {
+        display: none;
+        position: absolute;
+        overflow: visible;
+        overflow-x: hidden;
+        z-index: 10;
+
+        width: 280px;
+        height: auto;
+
+        background-color: $color-primary;
+        color: $white;
+    }
+    .slideshow-submenu-content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 10px;
+
+        button {
+            @include buttonstyles(red);
+        }
+    }
+}
