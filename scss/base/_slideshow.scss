@@ -1,12 +1,15 @@
 //Image slideshows
 
 .slideshow {
+    overflow: visible;
+
     height: 170px;
     // 100% overflows
     width: 98%;
 
     margin-left: 20px;
     margin-right: 20px;
+
     // Make this a block for the JS carousel
     display: flex;
     flex-wrap: nowrap;
@@ -16,30 +19,28 @@
 }
 
 .slideshow-element {
+    position: relative; 
+
     img {
         width: 100%;
         height: auto;
         filter: grayscale(1);
-
-        &:hover {
-            transition: 0.2s ease-in-out;
-            filter: grayscale(0);
-            & ~ .slideshow-submenu-banner {
-                display: block;
-            }
-        }
-
     }
     .slideshow-submenu-banner {
         display: none;
+        opacity: 1;
+
         position: absolute;
-        overflow: visible;
-        overflow-x: hidden;
-        z-index: 10;
+
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%); // Center horizontally
+        
+        margin-bottom: 30px;
 
         width: 280px;
         height: auto;
-
+        // If I knew how to prevent it going offscreen, I'd do it here
         background-color: $color-primary;
         color: $white;
     }
@@ -50,7 +51,37 @@
         padding: 10px;
 
         button {
-            @include buttonstyles(red);
+            @include buttonstyles(rgb(65, 131, 215));
+            width: auto;
+            height: 40px;
+            text-transform: uppercase;
+            font-size: smaller;
+            &::after {
+                content: " ➙";
+            }
+        }
+    }
+
+// Hover controls
+    &:hover {
+        .slideshow-submenu-banner {
+        display: block;
+
+        // With help from MDN
+        transition:            
+            opacity 0.4s,
+            display 0.4s;
+            transition-delay: 0.5s;
+            
+            transition-behavior: allow-discrete;
+            @starting-style {
+                opacity: 0;
+            }
+        }
+
+        img {
+            transition: 0.2s ease-in-out;
+            filter: grayscale(0);
         }
     }
 }
