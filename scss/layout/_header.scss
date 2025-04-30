@@ -24,11 +24,38 @@ header {
         align-items: center;
     }
 
+    // Header icon styles
+    .nav-icon {
+        @include buttoniconstyles;
+        font-size: 28px;
+        color: $white;
+    }
+
+    #header-logo {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 1em;
+    }
+
     button, #button-search {
         @include buttonstyles($color-button-grey);
         height: 56px;
         flex-grow: 1;
     }
+    #button-support {
+        @include buttonstyles($color-button-support);
+        &::before {
+            content: $icon-code-home;
+        }
+    }
+    #button-contact {
+        @include buttonstyles($color-button-grey);
+        padding-right: 120px;
+        &::before {
+            content: $icon-code-home;
+        }
+    }
+
     #searchbox {
         width: 200px;
         flex-grow: 2;
@@ -36,19 +63,43 @@ header {
         border: 2px solid $color-button-grey;
         border-radius: 3px 0px 0px 3px;
     }
-    #button-search {
-        margin-left: 0;
-        border-radius: 0 3px 3px 0;
+    // Submit button styling
+    .submit-styles {
+        position: relative;
+        display: inline-block;
+
+        #button-search {
+            margin-left: 0;
+            border-radius: 0 3px 3px 0;
+            width: 64px;
+        }
+        .nav-icon {
+            // Overlay icon on top of the button
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
     }
-    #button-support {
-        @include buttonstyles($color-button-support);
+
+    #button-nav {
+        background-color: $colour-primary-dark;
+        width: 32px;
+        text-align: center;
+    }
+
+    // Apply these styles after the buttons for DRY
+    #button-support, #button-contact {
         height: 56px;
+        width: 128px;        
+        &::before {
+            font-family: icomoon;
+            content: $icon-code-home;
+            padding-right: 12px;
+        }
     }
-    #header-logo {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-right: 1em;
-    }
+
 }
 
 // Navigation buttons
@@ -58,7 +109,6 @@ header {
     color: $white;
 
     .main-nav-list {
-
         display: flex;
         justify-content: space-between;
         padding: 0;
@@ -71,6 +121,9 @@ header {
         align-items: center;
         padding: 1rem;
         flex-grow: 1;
+
+        transition: 0.14s ease-in-out;
+
 
         // Submenu popup
         &:hover {
@@ -86,7 +139,7 @@ header {
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
+            text-align: left;
             text-decoration: none;
 
             small {
@@ -160,10 +213,13 @@ header {
 @media (max-width: $screen-medium) {
     header{
         margin-bottom: 50px;
-
+        // SHOW MOVIBLE SEARCH BAR
         #button-support,
         #button-contact {
             display: none;
+        }
+        #button-nav {
+            
         }
         #searchbox {
             width: auto;

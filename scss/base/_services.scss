@@ -25,6 +25,7 @@
     
     height: 100%;
     padding: 20px;
+    transition: 0.4s ease-in-out;
 
     border: 1px solid $color-button-border;
     border-radius: 15px;
@@ -80,17 +81,15 @@
 
 
     &:hover {
-        color: $white;
-
         &#sof{ @include hoverColourChange($colour-sof); }
         &#sup{ @include hoverColourChange($colour-sup); }
         &#mar{ @include hoverColourChange($colour-mar); }
         &#ser{ @include hoverColourChange($colour-ser); }
         &#des{ @include hoverColourChange($colour-des); }
         &#sec{ @include hoverColourChange($colour-sec); }
-        &#dev{ @include hoverColourChange($colour-dev); }
-        
-        transition: 0.25s ease-in-out;
+        &#dev{ @include hoverColourChange($colour-dev); }    
+        margin-top: -10px; 
+        transition: 0.4s ease-in-out;       
     }
 
 }

@@ -36,12 +36,33 @@ body {
 
 
     @media (max-width: $screen-small) {
-        h1{
-            font-size: 1.7rem;
-        }
         h2 {
-            font-size: 1.4rem;
+            display: none;
         }
     }
+}
 
+.cookie-button {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    height: 23px;
+    width: 133px;
+
+    border-radius: 0 10px 0 0;
+    background-color: darken($color-button-grey, 17%);
+    
+    p {
+        position: relative;
+        top: -8px;
+        padding-left: 10px;
+        color: $white;
+        font-size: 13px;
+        font-weight: 600;
+    }
+    &:hover {
+        background-color: $color-button-grey;
+        cursor: pointer;
+    }
 }

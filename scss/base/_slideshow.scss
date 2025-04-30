@@ -27,15 +27,14 @@
         filter: grayscale(1);
     }
     .slideshow-submenu-banner {
-        display: none;
-        opacity: 1;
-
         position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        content-visibility: hidden;
 
         bottom: 100%;
         left: 50%;
-        transform: translateX(-50%); // Center horizontally
-        
+        transform: translateX(-50%);
         margin-bottom: 30px;
 
         width: 280px;
@@ -43,6 +42,12 @@
         // If I knew how to prevent it going offscreen, I'd do it here
         background-color: $color-primary;
         color: $white;
+
+
+        transition: 
+            opacity 0.15s ease-in-out 0.05s, // Delay only applies when closing
+            visibility 0s linear 0.2s; // Wait for opacity transition before hiding
+
     }
     .slideshow-submenu-content {
         display: flex;
@@ -65,18 +70,13 @@
 // Hover controls
     &:hover {
         .slideshow-submenu-banner {
-        display: block;
+        opacity: 1;
+        visibility: visible;
+        content-visibility: visible;
 
-        // With help from MDN
-        transition:            
-            opacity 0.4s,
-            display 0.4s;
-            transition-delay: 0.5s;
-            
-            transition-behavior: allow-discrete;
-            @starting-style {
-                opacity: 0;
-            }
+        transition: 
+            opacity 0.3s ease-in-out 0s,
+            visibility 0s linear 0s;
         }
 
         img {
