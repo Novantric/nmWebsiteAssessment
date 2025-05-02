@@ -1,9 +1,11 @@
 @import "/assets/iconmoon/style.css";
 
 header {
-    position: relative;
-    margin-bottom: 150px;
+    position: sticky;
+    padding-bottom: 210px;
+    z-index: 10;
 
+    background-color: $white;
     a { 
         color: inherit; 
     }
@@ -60,8 +62,13 @@ header {
         width: 200px;
         flex-grow: 2;
         height: 56px;
-        border: 2px solid $color-button-grey;
+        border: 1px solid $color-button-grey;
         border-radius: 3px 0px 0px 3px;
+        &::placeholder {
+            padding-left: 10px;
+            font-size: 15px;
+            opacity: 0.75;
+        }
     }
     // Submit button styling
     .submit-styles {
@@ -76,7 +83,7 @@ header {
         .nav-icon {
             // Overlay icon on top of the button
             position: absolute;
-            left: 16px;
+            left: 18px;
             top: 50%;
             transform: translateY(-50%);
             pointer-events: none;
@@ -100,6 +107,54 @@ header {
         }
     }
 
+}
+
+// Mobile nav bar
+.main-searchbar-mobile {
+    display: none;
+
+    margin-top: -10px;
+
+    #searchbox {
+        width: 100%;
+        flex-grow: 2;
+        height: 56px;
+        border: 2px solid $color-button-grey;
+        border-radius: 3px 0px 0px 3px;
+        margin-left: 10px;
+
+        &::placeholder {
+            padding-left: 10px;
+            font-size: 15px;
+            opacity: 0.75;
+        }
+    }
+    // Submit button styling
+    .submit-styles {
+        position: relative;
+        display: inline-block;
+
+        #button-search {
+            @include buttonstyles($color-button-grey);
+            margin-left: -20px;
+            border-radius: 0 3px 3px 0;
+            width: 64px;
+            height: 56px;
+            margin-top: 0px;
+            margin-right: 10px;
+        }
+        .nav-icon {
+            // Overlay icon on top of the button
+            @include buttoniconstyles();
+            color: $white;
+            font-size: 32px;
+            position: absolute;
+            left: -4px;
+            top: 28px;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+    }
 }
 
 // Navigation buttons
@@ -205,28 +260,33 @@ header {
 }
 
 @media (max-width: $screen-large){
-    #searchbox {
-        display: none;
+    .main-heading {
+        #searchbox {
+            display: none;
+        }
     }
+
 }
 
 @media (max-width: $screen-medium) {
     header{
-        margin-bottom: 50px;
-        // SHOW MOVIBLE SEARCH BAR
-        #button-support,
-        #button-contact {
-            display: none;
-        }
-        #button-nav {
-            
-        }
-        #searchbox {
-            width: auto;
-        }
-    
-        .main-heading{
-            margin: 0;
+        padding-bottom: 110px;
+        .main-heading {
+            .container {
+                justify-content: center;
+            }
+            #button-support,
+            #button-contact {
+                display: none;
+                visibility: hidden;
+            }
+            #button-nav {
+                width: 64px;
+            }
+            #searchbox {
+                display: flex;
+                width: 150px;
+            }
         }
         .main-nav {
             display: none;
@@ -236,9 +296,23 @@ header {
 
 @media (max-width: $screen-small) {
     header {
-        #searchbox,
-        #button-search {
-            display: none;
+        padding-bottom: 170px;
+
+        .main-heading {
+            #button-nav {
+                width: 64px;
+            }
+            #searchbox {
+                display: none;
+            }
+        }
+
+        .main-searchbar-mobile {
+            display: flex;
+            #searchbox,
+            #button-search {
+                display: flex;
+            }
         }
     }
 }

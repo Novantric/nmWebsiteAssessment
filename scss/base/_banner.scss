@@ -98,6 +98,9 @@
     @media (max-width: $screen-medium){
         top: 590px;
     }
+    @media (max-width: $screen-small){
+        top: 650px;
+    }
 }
 
 .banner-dot {
