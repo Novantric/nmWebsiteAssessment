@@ -1,6 +1,6 @@
 // Include reusable mixins here
 
-@mixin buttonstyles($background-colour: null) {
+@mixin buttonstyles($background-colour: $colour-primary-dark, $has-arrow: null) {
     text-transform: uppercase;
     width: fit-content;
     height: 62px;
@@ -10,11 +10,16 @@
     border-radius: 3px;
     margin: 5px;
     padding: 5px 20px;
+    white-space: nowrap;
     cursor: pointer;
     &:hover {
-        @if $background-colour {
-            background-color: darken($background-colour, 10%);
-            transition: 0.15s ease-in-out;
+        background-color: darken($background-colour, 10%);
+        transition: 0.15s ease-in-out;
+    }
+    &::after {
+        @if $has-arrow {
+            margin-left: 10px;
+            content: $icon-code-arrow;
         }
     }
 }

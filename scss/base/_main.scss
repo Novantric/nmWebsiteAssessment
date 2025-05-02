@@ -48,16 +48,26 @@ main {
     background-color: $color-primary;
 
     button {
-        @include buttonstyles($colour-primary-dark);
+        @include buttonstyles($colour-primary-dark, true);
         border-radius: 5px;
-        margin: 0;
-        width: 100%;
-        white-space: nowrap;
-
-        &::after {
-            margin-left: 10px;
-            content: $icon-code-arrow;
+        margin: 0px;
+        width: 100%;        
+    }
+    h1 {
+        font-size: 36px;
+    }
+    p {
+        font-size: 16px;
+        line-height: 25px;
+        b {
+            font-weight: 600;
         }
+    }
+    q {
+        font-weight: 600;
+        font-style: italic;
+        font-size: 20px;
+        line-height: 30px;
     }
     a {
         color: $white;
@@ -91,17 +101,24 @@ main {
 
         h1 {
             margin-top: 0;
+            font-weight: 500;
         }
 
         &-buttons {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
+            gap: 30px;
             margin-top: auto;
         }
     }
+    .welcome-section2 p {
+        opacity: 0.75;
+        font-weight: 500;
+    }
+
     .stars {
         display: flex;
+        margin-bottom: 25px;
         gap: 5px;
         font-size: 42px;
         color: $colour-gold-star;
