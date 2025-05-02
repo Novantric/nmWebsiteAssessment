@@ -3,6 +3,8 @@
 header {
     position: sticky;
     padding-bottom: 210px;
+    box-shadow: 0 5px 25px rgba($color-button-grey, 0.2);
+
     z-index: 10;
 
     background-color: $white;
@@ -65,9 +67,11 @@ header {
         border: 1px solid $color-button-grey;
         border-radius: 3px 0px 0px 3px;
         &::placeholder {
+            position: relative;
             padding-left: 10px;
             font-size: 15px;
             opacity: 0.75;
+            top: -1px;
         }
     }
     // Submit button styling
@@ -112,21 +116,22 @@ header {
 // Mobile nav bar
 .main-searchbar-mobile {
     display: none;
-
     margin-top: -10px;
 
     #searchbox {
         width: 100%;
-        flex-grow: 2;
         height: 56px;
-        border: 2px solid $color-button-grey;
+        margin-left: 20px;
+        border: 2px solid lighten($color-button-grey, 20%);
         border-radius: 3px 0px 0px 3px;
-        margin-left: 10px;
+        box-shadow: inset 50px 100px lighten($color-button-grey, 30%);
 
         &::placeholder {
+            position: relative;
             padding-left: 10px;
             font-size: 15px;
             opacity: 0.75;
+            top: -1px;
         }
     }
     // Submit button styling
@@ -141,7 +146,7 @@ header {
             width: 64px;
             height: 56px;
             margin-top: 0px;
-            margin-right: 10px;
+            margin-right: 20px;
         }
         .nav-icon {
             // Overlay icon on top of the button
@@ -176,10 +181,7 @@ header {
         align-items: center;
         padding: 1rem;
         flex-grow: 1;
-
-        transition: 0.14s ease-in-out;
-
-
+        
         // Submenu popup
         &:hover {
             .submenu-banner {
@@ -222,12 +224,24 @@ header {
                 max-width: $screen-large;
                 margin: auto;
                 justify-items: start;
+
+
                 li {
-                    padding: 0.5rem;
-                    break-inside: avoid;
-                    
+                    display: inline-flex; 
+                    align-items: center;
+                    gap: 0.5rem;
+                    padding: 0.2rem;
+
+                    font-size: 18px;
+
                     &:hover {
                         text-decoration: underline;
+                    }
+    
+                    @each $id, $icon in $submenu-icons {
+                        &##{$id}::before {
+                            @include navsubmenuicons($icon);
+                        }
                     }
                 }
             }

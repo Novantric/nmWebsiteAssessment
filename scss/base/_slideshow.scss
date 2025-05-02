@@ -45,9 +45,9 @@
         color: $white;
 
         transition: 
-            opacity 0.15s ease-in-out 0.05s, // Delay only applies when closing
-            visibility 0s linear 0.2s; // Wait for opacity transition before hiding
-            
+            opacity 0.15s ease-in-out,
+            visibility 0s linear 0.2s;
+        
     }
     .slideshow-submenu-content {
         display: flex;
