@@ -22,7 +22,8 @@ main {
         padding-top: 5px;
 
         &::after {
-            content: " ➙";
+            content: $icon-code-arrow;
+            margin-left: 10px;
         }
         &:hover {
             text-decoration: underline;
@@ -40,6 +41,7 @@ main {
 
 .content-welcome {
     height: auto;
+    margin-top: -50px;
     padding-top: 40px;
     padding-bottom: 40px;
     color: $white;
@@ -51,6 +53,11 @@ main {
         margin: 0;
         width: 100%;
         white-space: nowrap;
+
+        &::after {
+            margin-left: 10px;
+            content: $icon-code-arrow;
+        }
     }
     a {
         color: $white;
@@ -100,5 +107,10 @@ main {
         color: $colour-gold-star;
     }
 
-
+    #welcome-button3 {
+        background-color: $colour-social-google;
+    }
+    #welcome-button4 {
+        background-color: $colour-social-trustpilot;
+    }
 }

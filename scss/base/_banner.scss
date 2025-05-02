@@ -37,7 +37,8 @@
     }
     .banner-item-button {
         &::after {
-            content: " ➙";
+            content: $icon-code-arrow;
+            margin-left: 10px;
         }
     }
 
