@@ -112,9 +112,10 @@ main {
         }
     }
     .welcome-section2 p {
-        opacity: 0.75;
+        color: rgba($white, 0.75);
         font-weight: 500;
     }
+    
 
     .stars {
         display: flex;
@@ -129,5 +130,49 @@ main {
     }
     #welcome-button4 {
         background-color: $colour-social-trustpilot;
+    }
+}
+
+.content-news-container {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .content-news-article {
+        width: 370px;
+        height: auto;
+        border: 2px solid red;
+        padding: 20px;
+        .content-news-article_image {
+            padding: 0;
+        }
+
+        &:hover {
+            transition: 0.5s ease-in-out;
+            margin-top: -10px;
+        }
+    }
+
+    @media (max-width: $screen-large) {
+        justify-content: space-between;
+        .content-news-article {
+            width: 48%;
+            &:last-child {
+                display: none;
+            }
+        }
+
+    }
+    @media (max-width: $screen-small) {
+        justify-content: space-between;
+        flex-direction: column;
+        .content-news-article {
+            width: 100%;
+            &:hover {
+                margin-top: 0px;
+            }
+        }
     }
 }

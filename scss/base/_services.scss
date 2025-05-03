@@ -88,8 +88,11 @@
         &#des{ @include hoverColourChange($colour-des); }
         &#sec{ @include hoverColourChange($colour-sec); }
         &#dev{ @include hoverColourChange($colour-dev); }    
-        margin-top: -10px; 
-        transition: 0.4s ease-in-out;       
+        transition: 0.4s ease-in-out;
+
+        @media (min-width: $screen-medium) {
+            margin-top: -10px; 
+        }
     }
 
 }
