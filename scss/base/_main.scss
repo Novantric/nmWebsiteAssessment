@@ -261,6 +261,15 @@ main {
             &:hover {
                 margin-top: 0px;
             }
+            &:last-child {
+                display: block;
+            }
+            img {
+                margin-left: 0px;
+            }
+            .content-news-article_author p {
+                margin-left: -60px;
+            }
         }
     }
 }
