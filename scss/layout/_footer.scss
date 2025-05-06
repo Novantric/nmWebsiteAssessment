@@ -5,7 +5,7 @@ footer {
     
     // All images in the footer will get inverted and brightened
     img {
-        filter: invert(100%) brightness(2);
+        filter: brightness(0) invert(1);
         display: block;
     }
 
@@ -66,6 +66,10 @@ footer {
 
     .follow-button {
         transition: 0.15s ease-in-out;
+        font-size: 32px;
+    }
+    .footer-icon {
+        filter: brightness(0) invert(1);
     }
 
     #follow-fb { &:hover{background-color: $colour-social-fb} }
