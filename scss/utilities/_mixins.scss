@@ -21,6 +21,8 @@
     &::after {
         @if $has-arrow {
             margin-left: 10px;
+            font-family: icomoon;
+            font-size: 18px;
             content: $icon-code-arrow;
         }
     }
