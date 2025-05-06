@@ -70,7 +70,7 @@ aside {
         &#sec { @include nav-item-colors($colour-sec); }
         &#cou { @include nav-item-colors($colour-dev); }
     
-        &#sof::before { content: "\e900"; }
+        &#sof::before { content: $icon-code-laptop; }
         &#sup::before { content: "\e901"; }
         &#mar::before { content: "\e900"; }
         &#ser::before { content: "\e900"; }
