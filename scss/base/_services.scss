@@ -25,9 +25,9 @@
     
     height: 100%;
     padding: 20px;
-    transition: 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
 
-    border: 1px solid $color-button-border;
+    border: 2px solid $color-button-border;
     border-radius: 15px;
     box-shadow: 0px 0px 50px lighten($color-button-grey, 30%);
 
@@ -88,7 +88,6 @@
         &#des{ @include hoverColourChange($colour-des); }
         &#sec{ @include hoverColourChange($colour-sec); }
         &#dev{ @include hoverColourChange($colour-dev); }    
-        transition: 0.4s ease-in-out;
 
         @media (min-width: $screen-medium) {
             margin-top: -10px; 

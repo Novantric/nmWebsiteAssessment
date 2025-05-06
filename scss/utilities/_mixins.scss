@@ -6,10 +6,12 @@
     height: 62px;
     color: $white;
     background-color: $background-colour;
+    transition: 0.15s ease-in-out;
     border: none;
     border-radius: 3px;
     margin: 5px;
     padding: 5px 20px;
+    padding-bottom: 3px;
     white-space: nowrap;
     cursor: pointer;
     &:hover {
@@ -33,8 +35,8 @@
 }
 
 @mixin nav-item-colors($color) {
+    transition: all 0.14s ease-in-out;
     &:hover {
-        transition: 0.14s ease-in-out;
         background-color: $color;
         &::before {
             color: $white;
@@ -71,4 +73,19 @@
         transition: 0.4s ease-in-out;
     }
     transition: 0.4s ease-in-out;
+}
+
+@mixin colournewsarticle($colour) {
+    button {
+        @include buttonstyles($colour);
+        height: 48px;
+        font-size: 17px;
+        margin: 0;
+    }
+    .content-news-article_image p {
+        background-color: $colour;
+    }
+    h3 {
+        color: $colour;
+    }
 }

@@ -25,6 +25,10 @@ aside {
         background-color: $colour-primary-dark;
     }
     
+    #button-toggle {
+        @include buttoniconstyles;
+        font-size: 32px;
+    }
     //menu items
     .nav-item {
         width: 100%;
