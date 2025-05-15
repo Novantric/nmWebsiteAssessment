@@ -186,10 +186,12 @@ header {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 1rem;
+        padding: 1rem 1rem 13px 1rem;
         width: 1rem;
+        height: auto;
         flex-grow: 1;
-        
+        justify-content: space-around;
+
         // Submenu popup
         &:hover {
             .submenu-banner {
@@ -206,10 +208,14 @@ header {
             align-items: center;
             text-align: left;
             text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.03rem;
 
             small {
-                font-size: xx-small;
+                font-size: 0.55rem;
                 display: block;
+                line-height: 12px;
+                letter-spacing: 0;
             }
         }
 
@@ -223,6 +229,7 @@ header {
             right: auto;
 
             width: 100%;
+            height: auto;
             padding: 2rem;
             
             .submenu-content {
@@ -259,8 +266,10 @@ header {
         // Nav colours and icons
         &::before {
             font-family: icomoon;
-            font-size: 1rem;
-            margin-bottom: 0.25rem;
+            font-size: 1.15rem;
+            line-height: 30px;
+            margin-top: -4px;
+            margin-bottom: 4px;
         }
         &#sof { @include nav-item-colors($colour-sof); }
         &#sup { @include nav-item-colors($colour-sup); }
