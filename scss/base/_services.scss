@@ -33,9 +33,13 @@
 
     h3, p {
         margin: 10px;
-        font-weight: 300;
+    }
+    h3 {
+        font-weight: 400;
+        color: $colour-heading;
     }
     p {
+        font-weight: 300;
         font-size: 0.8rem;
     }
 

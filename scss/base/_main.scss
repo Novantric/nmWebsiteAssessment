@@ -52,7 +52,7 @@ main {
         @include buttonstyles($colour-primary-dark, true);
         border-radius: 5px;
         margin: 0px;
-        width: 100%;        
+        width: 100%;      
     }
     h1 {
         font-size: 36px;
@@ -126,11 +126,18 @@ main {
         color: $colour-gold-star;
     }
 
+
     #welcome-button3 {
-        background-color: $colour-social-google;
+        @include buttonstyles($colour-social-google, true);
     }
     #welcome-button4 {
-        background-color: $colour-social-trustpilot;
+        @include buttonstyles($colour-social-trustpilot, true);
+    }
+
+    #welcome-button3, #welcome-button4 {
+        border-radius: 5px;
+        margin: 0px;
+        width: 100%; 
     }
 }
 
