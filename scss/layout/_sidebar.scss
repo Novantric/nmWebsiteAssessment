@@ -32,10 +32,11 @@ aside {
     //menu items
     .nav-item {
         width: 100%;
+        height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
-        flex-grow: 1;
+        // flex-grow: 1;
     
         padding-top: 1em;
         padding-bottom: 1em;
@@ -51,6 +52,8 @@ aside {
             align-items: center;
             text-align: center;
             text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.02rem;
     
             small {
                 font-size: xx-small;
@@ -60,7 +63,10 @@ aside {
         // Nav colours and icons
         &::before {
             font-family: icomoon;
-            font-size: 1rem;
+            font-size: 1.15rem;
+            line-height: 30px;
+            margin-top: -4px;
+            margin-bottom: 4px;
         }
         &#sof { @include nav-item-colors($colour-sof); }
         &#sup { @include nav-item-colors($colour-sup); }
@@ -71,12 +77,12 @@ aside {
         &#cou { @include nav-item-colors($colour-dev); }
     
         &#sof::before { content: $icon-code-laptop; }
-        &#sup::before { content: "\e901"; }
-        &#mar::before { content: "\e900"; }
-        &#ser::before { content: "\e900"; }
-        &#des::before { content: "\e900"; }
-        &#sec::before { content: "\e900"; }
-        &#cou::before { content: "\e900"; }
+        &#sup::before { content: $icon-code-display; }
+        &#mar::before { content: $icon-code-bars; }
+        &#ser::before { content: $icon-code-phone; }
+        &#des::before { content: $icon-code-code; }
+        &#sec::before { content: $icon-code-shield; }
+        &#cou::before { content: $icon-code-mortar; }
     }
 
 
