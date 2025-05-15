@@ -216,14 +216,7 @@ header {
         flex-grow: 1;
         justify-content: space-around;
 
-        // Submenu popup
-        &:hover {
-            .submenu-banner {
-                display: block;
-                opacity: 1;
-                visibility: visible;
-            }
-        }
+
 
         // Nav item text
         a {
@@ -243,6 +236,15 @@ header {
             }
         }
 
+        // Submenu popup
+        &:hover {
+            .submenu-banner {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+
+            }
+        }
         // Popup submenu
         .submenu-banner {
             display: none;
