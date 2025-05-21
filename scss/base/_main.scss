@@ -86,7 +86,7 @@ main {
         margin-top: 30px;
         font-size: 17px;
         @media (max-width: $screen-mobile) {
-            margin-bottom: 170px;
+            margin-bottom: 130px;
         }
     }
     .container {
@@ -127,9 +127,7 @@ main {
                 flex-direction: column;
                 gap: 15px;
             }
-            @media (max-width: $screen-mobile) {
-                margin-top: -150px;
-            }
+
         }
     }
     .welcome-section2 p {
@@ -159,8 +157,6 @@ main {
         margin: 0px;
         width: 100%;
     }
-
-
 }
 
 .content-news-container {
