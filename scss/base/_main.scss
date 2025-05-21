@@ -85,6 +85,9 @@ main {
     #author {
         margin-top: 30px;
         font-size: 17px;
+        @media (max-width: $screen-mobile) {
+            margin-bottom: 170px;
+        }
     }
     .container {
         display: grid;
@@ -124,7 +127,8 @@ main {
                 flex-direction: column;
                 gap: 15px;
             }
-            @media (max-width: $screen-medium) {
+            @media (max-width: $screen-mobile) {
+                margin-top: -150px;
             }
         }
     }
@@ -289,11 +293,24 @@ main {
             &:last-child {
                 display: block;
             }
-            img {
-                margin-left: 0px;
+            .content-news-article_image {
+                a {
+                    margin-right: 0;
+                }
+                img {
+                    margin-left: 0px;
+                }
             }
+
             .content-news-article_author p {
-                margin-left: -60px;
+                margin-left: -6dvw;
+            }
+        }
+    }
+    @media (max-width: $screen-mobile) {
+        .content-news-article {
+            .content-news-article_author p {
+                margin-left: 0;
             }
         }
     }

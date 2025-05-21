@@ -368,7 +368,7 @@ header {
                 margin-right: -20px;
             }
             #button-nav {
-                max-width: 56px;
+                width: auto;
             }
             .submit-styles {
                 #button-search {
@@ -428,6 +428,19 @@ header {
             #searchbox,
             #button-search {
                 display: flex;
+            }
+        }
+    }
+}
+
+@media (max-width: $screen-mobile) {
+    header {
+        .main-heading { 
+            #header-logo {
+                width: 74%;
+            }
+            #button-nav {
+                width: auto;
             }
         }
     }
