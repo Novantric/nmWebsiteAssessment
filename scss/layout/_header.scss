@@ -2,7 +2,7 @@
 
 header {
     position: sticky;
-    padding-bottom: 210px;
+    padding-bottom: 209px;
     box-shadow: 0 5px 25px rgba($color-button-grey, 0.2);
 
     z-index: 10;
@@ -24,7 +24,7 @@ header {
 
     .container {
         justify-content: space-between;
-        gap: 1em;
+        gap: 20px;
         display: flex;
         align-items: center;
     }
@@ -32,14 +32,14 @@ header {
     // Header icon styles
     .nav-icon {
         @include buttoniconstyles;
-        font-size: 28px;
+        font-size: 24px;
         color: $white;
     }
 
     #header-logo {
         height: auto;
-        width: 18.5em;
-        margin: 10px 3.5em 10px 0;
+        width: 375px;
+        margin: 10px 55px 10px 0;
     }
 
     button, #button-search {
@@ -51,7 +51,7 @@ header {
     #button-support {
         @include buttonstyles($color-button-support);
         margin: 0;
-        font-size: 0.9em;
+        font-size: 18px;
         &::before {
             content: "\e941";
         }
@@ -59,14 +59,14 @@ header {
     #button-contact {
         @include buttonstyles($color-button-grey);
         margin: 0;
-        font-size: 0.9em;
+        font-size: 18px;
         &::before {
             content: "\e945";
         }
     }
 
     #searchbox {
-        width: 200px;
+        width: 215px;
         padding-left: 10px;
         flex-grow: 2;
         height: 56px;
@@ -78,6 +78,7 @@ header {
             font-size: 15px;
             opacity: 0.75;
             top: -1px;
+            left: 5px;
         }
         &:focus {
             transition: 0.25s;
@@ -99,7 +100,6 @@ header {
         .nav-icon {
             // Overlay icon on top of the button
             position: absolute;
-            left: -2px;
             top: 50%;
             transform: translateY(-50%);
             pointer-events: none;
@@ -108,7 +108,7 @@ header {
 
     #button-nav {
         @include buttonstyles(rgba($colour-primary-dark, 0.95));
-        width: 1.5em;
+        width: 50px;
         height: 56px;
         margin: 0;
         font-size: 32px;
@@ -127,7 +127,7 @@ header {
     // Apply these styles after the buttons for DRY
     #button-support, #button-contact {
         height: 56px;
-        width: 7.5em;
+        width: 135px;
         &::before {
             font-family: icomoon;
             padding-right: 6px;
@@ -152,8 +152,10 @@ header {
 
     #searchbox {
         width: 100%;
-        height: 56px;
-        margin-left: 20px;
+        height: 48px;
+        margin-left: 15px;
+        margin-right: -15px;
+
         border: 2px solid lighten($color-button-grey, 20%);
         border-radius: 3px 0px 0px 3px;
         box-shadow: inset 50px 100px lighten($color-button-grey, 30%);
@@ -163,39 +165,44 @@ header {
             font-size: 15px;
             opacity: 0.75;
             top: -1px;
+            left: 5px;
         }
     }
     // Submit button styling
     .submit-styles {
         position: relative;
         display: inline-block;
-
+        margin-right: 30px;
         #button-search {
-            @include buttonstyles($color-button-grey);
-            margin-left: -20px;
-            border-radius: 0 3px 3px 0;
-            width: 64px;
-            height: 56px;
-            margin-top: 0px;
-            margin-right: 20px;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0);
+            border: 0;
+            width: 50px;
+            height: 50px;
+            left: -35px;
         }
         .nav-icon {
             // Overlay icon on top of the button
             @include buttoniconstyles();
-            color: $white;
-            font-size: 32px;
+            color: $black;
+            font-size: 22px;
             position: absolute;
-            left: -4px;
-            top: 28px;
+            left: -32px;
+            top: 24px;
             transform: translateY(-50%);
-            pointer-events: none;
+
+            padding: 12px;
+
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 }
 
 // Navigation buttons
 .main-nav {
-    height: 100px;
+    height: 99px;
     background-color: $color-primary;
     color: $white;
 
@@ -212,10 +219,9 @@ header {
         align-items: center;
         padding: 1rem 1rem 1rem 1rem;
         width: 1rem;
-        height: auto;
+        height: 100%;
         flex-grow: 1;
         justify-content: space-around;
-
 
 
         // Nav item text
@@ -225,14 +231,15 @@ header {
             align-items: center;
             text-align: left;
             text-decoration: none;
-            font-size: 0.9rem;
-            letter-spacing: 0.02rem;
+            font-size: 18px;
+            letter-spacing: 0.025rem;
+            margin-bottom: 1px;
 
             small {
-                font-size: 0.55rem;
+                font-size: 10px;
                 display: block;
-                line-height: 12px;
-                letter-spacing: 0;
+                line-height: 10px;
+                letter-spacing: 0.02rem;
             }
         }
 
@@ -242,7 +249,6 @@ header {
                 display: block;
                 opacity: 1;
                 visibility: visible;
-
             }
         }
         // Popup submenu
@@ -250,18 +256,18 @@ header {
             display: none;
             position: absolute;
 
-            top: 210px;
+            top: 209px;
             left: 0;
             right: auto;
 
             width: 100%;
             height: auto;
-            padding: 2rem;
+            padding: 35px 0 35px 0;
             
             .submenu-content {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
-                gap: 1rem;
+                gap: 1.75rem;
                 max-width: $screen-large;
                 margin: auto;
                 justify-items: start;
@@ -269,13 +275,14 @@ header {
                 li {
                     display: inline-flex; 
                     align-items: center;
-                    gap: 0.5rem;
-                    padding: 0.2rem;
-                    font-size: 18px;
+                    gap: 10px;
+                    font-size: 24px;
 
-                    &:hover {
-                        text-decoration: underline;
-                        // PREVENT THIS APPLYING TO ICONS
+                    a {
+                        font-size: 20px;
+                        &:hover {
+                            text-decoration: underline;
+                        }
                     }
     
                     @each $id, $icon in $submenu-icons {
@@ -291,10 +298,10 @@ header {
         // Nav colours and icons
         &::before {
             font-family: icomoon;
-            font-size: 1.15rem;
+            font-size: 23px;
             line-height: 1.5rem;
-            margin-top: -4px;
-            margin-bottom: 4px;
+            margin-top: 3px;
+            margin-bottom: 9px;
         }
         &#sof { @include nav-item-colors($colour-sof); }
         &#sup { @include nav-item-colors($colour-sup); }
@@ -317,9 +324,25 @@ header {
 
 @media (max-width: $screen-large){
     .main-heading {
+        .container {
+            justify-content: space-between;
+        }
         #searchbox {
             display: none;
         }
+        .submit-styles {
+            #button-search {
+                margin-left: 0;
+                border-radius: 3px;
+            }
+            .nav-icon {
+                left: 20px;
+            }
+        }
+        #button-nav {
+            max-width: 56px;
+        }
+
     }
 
 }
@@ -332,20 +355,27 @@ header {
                 justify-content: center;
             }
             #header-logo {
-                margin: 10px 1.5em 10px 0;
+                margin: 10px 33px 10px 0;
+                width: 350px;
             }
             #button-support,
             #button-contact {
                 display: none;
-                visibility: hidden;
-            }
-            #button-nav {
-                width: 64px;
             }
             #searchbox {
                 display: flex;
-                width: 150px;
+                width: 170px;
+                margin-right: -20px;
             }
+            #button-nav {
+                max-width: 56px;
+            }
+            .submit-styles {
+                #button-search {
+                    border-radius: 0 3px 3px 0;
+                }
+            }
+
         }
         .main-nav {
             display: none;
@@ -356,9 +386,39 @@ header {
 @media (max-width: $screen-small) {
     header {
         padding-bottom: 170px;
-
         .main-heading {
-            #searchbox {
+            .container {
+                gap: 5px;
+                justify-content: space-between;
+                width: 100%;
+            }
+            button {
+                max-width: 56px;
+                margin: 0 auto;
+            }
+            #header-logo {
+                margin: 10px 0 10px 0;
+                width: 300px;
+            }
+            #button-contact {
+                display: flex;
+                width: auto;
+                font-size: 0;
+                
+                position: absolute;
+                right: 3.5rem;
+                margin-right: 30px;
+
+                &::before {
+                    position: relative;
+                    font-size: 28px;
+                    align-content: center;
+                    text-align: center;
+                    left: -6px;
+                }
+            }
+            #button-search, #searchbox,
+            .nav-icon {
                 display: none;
             }
         }

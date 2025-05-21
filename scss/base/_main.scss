@@ -1,7 +1,7 @@
 main {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 60px;
 }
 
 .section-heading {
@@ -14,11 +14,11 @@ main {
         margin: 0;
         font-weight: 400;
         color: $colour-heading;
-        font-size: 2.25rem;
+        font-size: 42px;
     }
     h2 {
-        font-weight: 500;
-        font-size: 1.5rem;
+        font-weight: 600;
+        font-size: 36px;
         padding-top: 5px;
         &::after {
             font-family: icomoon;
@@ -56,18 +56,23 @@ main {
     }
     h1 {
         font-size: 36px;
+        margin-bottom: 35px;
+        font-weight: 650;
     }
     p {
         font-size: 16px;
-        line-height: 25px;
+        line-height: 30px;
+        letter-spacing: 0.03rem;
+        margin-bottom: 25px;
         b {
             font-weight: 600;
         }
     }
     q {
+        quotes: none;
         font-weight: 600;
         font-style: italic;
-        font-size: 20px;
+        font-size: 21px;
         line-height: 30px;
     }
     a {
@@ -77,13 +82,17 @@ main {
             text-decoration: underline;
         }
     }
-
+    #author {
+        margin-top: 30px;
+        font-size: 17px;
+    }
     .container {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-areas:
         "section1 section2";
         gap: 30px;
+        
 
         @media (max-width: $screen-medium) {
             grid-template-columns: 1fr;
@@ -99,17 +108,24 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-
         h1 {
             margin-top: 0;
             font-weight: 500;
         }
 
         &-buttons {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-direction: row;
             gap: 30px;
             margin-top: auto;
+            font-size: 20px;
+
+            @media (max-width: $screen-large) { 
+                flex-direction: column;
+                gap: 15px;
+            }
+            @media (max-width: $screen-medium) {
+            }
         }
     }
     .welcome-section2 p {
@@ -122,7 +138,7 @@ main {
         display: flex;
         margin-bottom: 25px;
         gap: 5px;
-        font-size: 42px;
+        font-size: 48px;
         color: $colour-gold-star;
     }
 
@@ -137,8 +153,10 @@ main {
     #welcome-button3, #welcome-button4 {
         border-radius: 5px;
         margin: 0px;
-        width: 100%; 
+        width: 100%;
     }
+
+
 }
 
 .content-news-container {

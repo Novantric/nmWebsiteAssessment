@@ -1,14 +1,15 @@
 // OPTIONAL, changes based on mobile layout and moves things on overflow
 
 aside {
-    width: 260px;
-
+    width: 255px;
     background-color: $colour-primary-light;
+    z-index: 20;
+    top: 0;
 
     .container {
         width: 100%;
-        margin-top: 10px;
         display: flex;
+        padding-top: 10px;
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
@@ -52,21 +53,21 @@ aside {
             align-items: center;
             text-align: center;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 18px;
             letter-spacing: 0.02rem;
     
             small {
-                font-size: xx-small;
+                font-size: 10px;
                 display: block;
             }
         }
         // Nav colours and icons
         &::before {
             font-family: icomoon;
-            font-size: 1.15rem;
+            font-size: 23px;
             line-height: 30px;
-            margin-top: -4px;
-            margin-bottom: 4px;
+            margin-top: -5px;
+            margin-bottom: 2px;
         }
         &#sof { @include nav-item-colors($colour-sof); }
         &#sup { @include nav-item-colors($colour-sup); }

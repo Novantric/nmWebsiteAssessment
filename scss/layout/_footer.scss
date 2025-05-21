@@ -12,18 +12,18 @@ footer {
     h1 {
         text-transform: uppercase;
         font-weight: 400;
-        font-size: smaller;
+        font-size: 16px;
         text-align: left;
         margin-bottom: 20px;
     }
 
     ul {
-        font-size: x-small;
-        line-height: 1.1rem;
+        font-size: 13px;
+        line-height: 1.4rem;
         list-style: none;
         text-align: left;
         padding: 0;
-        font-weight: 350;
+        font-weight: 400;
         :hover {
             text-decoration: underline;
             cursor: pointer;
@@ -32,9 +32,10 @@ footer {
 }
 
 #footer-logo {
-    width: 16em;
+    width: 20rem;
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    margin-top: 20px;
 }
 
 .footer-links {
@@ -42,18 +43,22 @@ footer {
     flex-wrap: wrap;
     align-items: stretch;
     justify-content: space-between;
-
-    gap: 1.25em;
+    gap: 1rem;
 }
 
 .footer-links--follow {
     display: flex;
     flex-direction: column;
-
+    justify-content: center;
+    h1 {
+        font-size: 20px;
+    }
 
     .footer-links--follow-buttons {
         display: flex;
-        flex-wrap: wrap;   
+        flex-wrap: wrap;
+        margin-left: -5px;
+        align-items: space-between;
     }
 
     a {
@@ -75,7 +80,6 @@ footer {
     #follow-fb { &:hover{background-color: $colour-social-fb} }
     #follow-li { &:hover{background-color: $colour-social-li} }
     #follow-tw { &:hover{background-color: $colour-social-tw} }
-    #follow-ig { &:hover{background-color: $colour-social-ig} }
 }
 
 .footer-links--section {
@@ -85,19 +89,17 @@ footer {
         width: 100%;
         height: auto;
     }
-
-    &.footer-links--firstsection {
-        // flex-grow: 2;
-    }
 }
 
 .footer-copyright {
     background-color: $colour-primary-dark;
+    #follow-ig { &:hover{background-color: $colour-social-ig} }
     width: 100%;
     padding: 1px;
+    padding-top: 3px;
     text-align: left;
-    font-size: 14px;
-
+    font-size: 13px;    
+    letter-spacing: 0.03rem;
     a {
         color: $white;
         text-decoration: none;
