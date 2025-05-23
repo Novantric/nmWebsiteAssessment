@@ -12,23 +12,56 @@ aside {
         padding-top: 10px;
         flex-direction: column;
         align-items: center;
-        gap: 0.5rem;
+        gap: 15px;
     }
 
     button, input[type="submit"] {
         @include buttonstyles($colour-primary-light);
         height: 50px;
         width: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
         border: 1px solid $color-button-border;
     }
-
     ul {
+        width: 100%;
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 0;
         background-color: $colour-primary-dark;
+
+        font-size: 16px;
+
+        list-style: none;
+        text-align: center;
+        text-transform: uppercase;
+
+        border-radius: 5px;
+        li {
+            padding: 12px 10px 10px 10px;
+            height: auto;
+            line-height: 22px;
+            border-radius: 5px;
+            border-top: 1px solid $color-button-border;
+            a {
+                color: $white;
+                text-decoration: none;
+            }
+            &:hover {
+                background-color: lighten($colour-primary-dark, 1);
+            }
+        }
+
     }
-    
+    #button-contact {
+        font-size: 18px;
+        text-transform: uppercase;
+        min-height: 50px;
+    }
     #button-toggle {
         @include buttoniconstyles;
         font-size: 32px;
+        min-height: 60px;
     }
     //menu items
     .nav-item {
@@ -37,6 +70,7 @@ aside {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-bottom: -15px;
         // flex-grow: 1;
     
         padding-top: 1em;
@@ -89,7 +123,7 @@ aside {
 
     
     @media (min-width: $screen-medium) {
-        #button-contact {
+        #button-contact, .nav-item {
             display: none;
         }
     }
