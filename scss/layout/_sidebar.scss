@@ -29,6 +29,7 @@ aside {
         margin-top: 0;
         margin-bottom: 0;
         background-color: $colour-primary-dark;
+        transition: 0.15s ease-in-out;
 
         font-size: 16px;
 
@@ -48,6 +49,7 @@ aside {
                 text-decoration: none;
             }
             &:hover {
+                transition: 0.15s ease-in-out;
                 background-color: lighten($colour-primary-dark, 1);
             }
         }
