@@ -38,8 +38,8 @@ header {
 
     #header-logo {
         height: auto;
-        width: 375px;
-        margin: 10px 55px 10px 0;
+        width: 370px;
+        margin: 10px 62px 10px 0;
     }
 
     button, #button-search {
@@ -71,8 +71,7 @@ header {
         flex-grow: 2;
         height: 56px;
         transition: 0.25s;
-        border: 1px solid $color-button-grey;
-        border-radius: 3px 0px 0px 3px;
+        border: 1px solid #cccccc;
         &::placeholder {
             position: relative;
             font-size: 15px;
@@ -127,7 +126,7 @@ header {
     // Apply these styles after the buttons for DRY
     #button-support, #button-contact {
         height: 56px;
-        width: 135px;
+        width: 130px;
         &::before {
             font-family: icomoon;
             padding-right: 6px;
@@ -268,6 +267,17 @@ header {
             height: auto;
             padding: 35px 0 35px 0;
 
+            // Banner titles
+            h2 {
+                width: 100%;
+                margin-top: 15px;
+                margin-left: 100px;
+                font-size: 32px;
+                font-weight: 600;
+                margin-bottom: 12px;
+            }
+
+
             .submenu-content {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
@@ -327,23 +337,15 @@ header {
         &:after {
             content: "";
             display: none;
-            position: absolute;
-            left: 50%;
-            bottom: -35px;
+            position: relative;
+            left: 60%;
+            bottom: -15px;
             transform: translateX(-50%);
-
+            text-align: center;
             border-left: 84px solid transparent;
             border-right: 84px solid transparent;
             border-top: 35px solid #00000036;
         }
-        // Hard code the arrow positions
-        &#sof::after { left: 200px; }
-        &#sup::after { left: 370px; }
-        &#mar::after { left: 535px; }
-        &#ser::after { left: 700px; }
-        &#des::after { left: 870px; }
-        &#sec::after { left: 1035px; }
-        &#cou::after { left: 1205px; }
     }
 }
 
@@ -375,7 +377,8 @@ header {
             height: 115px;
 
             &::after {
-                bottom: -51px;
+                left: 65%;
+                bottom: -34px;
                 border-left-width: 67px;
                 border-right-width: 67px;
             }
@@ -387,14 +390,6 @@ header {
             .submenu-banner {
                 top: 225px;
             }
-
-            &#sof::after { left: 202px; }
-            &#sup::after { left: 337px; }
-            &#mar::after { left: 471px; }
-            &#ser::after { left: 606px; }
-            &#des::after { left: 741px; }
-            &#sec::after { left: 876px; }
-            &#cou::after { left: 1011px; }
         }
 
     }
