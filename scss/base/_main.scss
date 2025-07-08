@@ -129,10 +129,14 @@ main {
 
             @media (max-width: $screen-large) {
                 gap: 10px;
+                width: 230px;
             }
-            @media (max-width: $screen-xsmall) { 
-                flex-direction: column;
+            @media (max-width: $screen-medium) {
                 gap: 15px;
+                width: 100%;
+            }
+            @media (max-width: $screen-small) { 
+                flex-direction: column;
             }
 
         }
