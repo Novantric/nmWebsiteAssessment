@@ -53,7 +53,10 @@ main {
         @include buttonstyles($colour-primary-dark, true);
         border-radius: 5px;
         margin: 0px;
-        width: 100%;      
+        width: 100%;
+        @media (max-width: $screen-small) {
+            width: auto
+        }
     }
     h1 {
         font-size: 36px;
@@ -86,9 +89,6 @@ main {
     #author {
         margin-top: 30px;
         font-size: 17px;
-        @media (max-width: $screen-mobile) {
-            margin-bottom: 130px;
-        }
     }
     .container {
         display: grid;
@@ -99,7 +99,7 @@ main {
         
 
         @media (max-width: $screen-medium) {
-            grid-template-columns: 1fr;
+            grid-template-columns: auto;
             grid-template-rows: 1fr 1fr;
             grid-template-areas:
             "section1"
@@ -116,7 +116,10 @@ main {
             margin-top: 0;
             font-weight: 500;
         }
-
+        p {
+            color: rgba($white, 0.75);
+            font-weight: 500;
+        }
         &-buttons {
             display: flex;
             flex-direction: row;
@@ -124,18 +127,16 @@ main {
             margin-top: auto;
             font-size: 20px;
 
-            @media (max-width: $screen-large) { 
+            @media (max-width: $screen-large) {
+                gap: 10px;
+            }
+            @media (max-width: $screen-xsmall) { 
                 flex-direction: column;
                 gap: 15px;
             }
 
         }
     }
-    .welcome-section2 p {
-        color: rgba($white, 0.75);
-        font-weight: 500;
-    }
-    
 
     .stars {
         display: flex;
