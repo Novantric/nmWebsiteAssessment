@@ -269,17 +269,17 @@ header {
 
             // Banner titles
             h2 {
-                width: 100%;
-                margin-top: 15px;
-                margin-left: 100px;
+                max-width: $screen-large;
+                margin: 10px auto 25px auto;
+                padding-left: 40px;
+                text-align: left;
                 font-size: 32px;
-                font-weight: 600;
-                margin-bottom: 12px;
+                font-weight: 450;
             }
-
 
             .submenu-content {
                 display: grid;
+                grid-template-rows: auto, 1fr;
                 grid-template-columns: repeat(3, 1fr);
                 gap: 1.75rem;
                 max-width: $screen-large;
@@ -294,6 +294,7 @@ header {
 
                     a {
                         font-size: 20px;
+                        text-align: start;
                         &:hover {
                             text-decoration: underline;
                         }
@@ -381,6 +382,9 @@ header {
                 bottom: -34px;
                 border-left-width: 67px;
                 border-right-width: 67px;
+            }
+            &:first-child::after {
+                bottom: -15px;
             }
             a {
                 text-wrap: wrap;
