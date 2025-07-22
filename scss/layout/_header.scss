@@ -213,6 +213,7 @@ header {
     }
 
     .nav-item {
+        cursor: pointer;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -256,6 +257,7 @@ header {
         }
         // Popup submenu
         .submenu-banner {
+            cursor: default;
             display: none;
             position: absolute;
 
@@ -373,10 +375,11 @@ header {
     }
 
     .main-nav {
+        
         padding-bottom: 115px;
         .nav-item {
             height: 115px;
-
+            
             &::after {
                 left: 65%;
                 bottom: -34px;

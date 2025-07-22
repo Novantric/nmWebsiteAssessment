@@ -1,7 +1,7 @@
 // OPTIONAL, changes based on mobile layout and moves things on overflow
 
 aside {
-    width: 255px;
+    width: $sidebar-width;
     background-color: $colour-primary-light;
     z-index: 20;
     top: 0;
@@ -9,36 +9,35 @@ aside {
     .container {
         width: 100%;
         display: flex;
-        padding-top: 10px;
         flex-direction: column;
         align-items: center;
-        gap: 15px;
     }
 
     button, input[type="submit"] {
         @include buttonstyles($colour-primary-light);
-        height: 50px;
-        width: 100%;
+        height: 40px;
+        width: 110%;
         margin-top: 0;
         margin-bottom: 0;
         border: 1px solid $color-button-border;
     }
     ul {
-        width: 100%;
+        width: 110%;
         padding: 0;
-        margin-top: 0;
+        margin: 0;
         background-color: $colour-primary-dark;
         transition: 0.15s ease-in-out;
 
-        font-size: 16px;
+        font-size: 14px;
 
         list-style: none;
-        text-align: center;
+        text-align: left;
         text-transform: uppercase;
 
         border-radius: 5px;
         li {
-            padding: 12px 10px 10px 10px;
+            cursor: pointer;
+            padding: 10px;
             height: auto;
             line-height: 22px;
             border-radius: 5px;
@@ -46,7 +45,13 @@ aside {
             a {
                 color: $white;
                 text-decoration: none;
+                &::before {
+                    content: "\BB";
+                    font-size: 22px;
+                    margin-right: 10px;
+                }
             }
+
             &:hover {
                 transition: 0.15s ease-in-out;
                 background-color: lighten($colour-primary-dark, 1);
@@ -64,16 +69,18 @@ aside {
         font-size: 32px;
         min-height: 60px;
     }
+
+
     //menu items
     .nav-item {
-        width: 100%;
-        height: auto;
+        cursor: pointer;
+        width: 110%;
+        height: 50px;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        margin-bottom: -15px;
     
-        padding-top: 1em;
+        padding-top: 1.1em;
         padding-bottom: 1em;
 
         border: 1px solid $color-button-border;
@@ -81,27 +88,23 @@ aside {
     
         // Nav item text
         a {
+            margin-left: 13px;
             color: $white;
-            display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
+            text-align: left;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 16px;
             letter-spacing: 0.02rem;
-    
-            small {
-                font-size: 10px;
-                display: block;
-            }
+            text-transform: uppercase;
         }
         // Nav colours and icons
         &::before {
             font-family: icomoon;
             font-size: 23px;
             line-height: 30px;
-            margin-top: -5px;
-            margin-bottom: 2px;
+            margin-left: 13px;
+            margin-top: -2px;
         }
         &#sof { @include nav-item-colors($colour-sof); }
         &#sup { @include nav-item-colors($colour-sup); }

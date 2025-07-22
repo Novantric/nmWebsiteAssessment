@@ -25,7 +25,7 @@ main {
     grid-area: main;
 }
 
-
+$sidebar-width: 350px;
 aside {
     grid-area: sidebar;
 
@@ -39,7 +39,7 @@ aside {
     background-color: #333645;
 
     position: fixed;
-    right: -16em;
+    right: -$sidebar-width;
     transition: right 500ms ease-in-out;
 }
 

@@ -80,6 +80,7 @@ footer {
     #follow-fb { &:hover{background-color: $colour-social-fb} }
     #follow-li { &:hover{background-color: $colour-social-li} }
     #follow-tw { &:hover{background-color: $colour-social-tw} }
+    #follow-ig { &:hover{background-color: $colour-social-ig} }
 }
 
 .footer-links--section {
@@ -92,8 +93,7 @@ footer {
 }
 
 .footer-copyright {
-    background-color: $colour-primary-dark;
-    #follow-ig { &:hover{background-color: $colour-social-ig} }
+    background-color: $colour-primary-dark; 
     width: 100%;
     padding: 1px;
     padding-top: 3px;
