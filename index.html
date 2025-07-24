@@ -24,10 +24,14 @@
                         <input type="text" name="desktop-search" id="searchbox" placeholder="Search...">
                         <div class="submit-styles">
                             <input type="submit" id="button-search" value=" ">
-                            <div class="icon-search nav-icon"></div>
+                            <div class="icon-magnifying-glass nav-icon"></div>
                         </div>
-                    
-                        <button id="button-nav" class="icon-menu" onclick="toggleSidebar()"><span class="icon-home nav-icon"></span></button>
+
+                        <button id="button-nav" onclick="toggleSidebar()">
+                            <span id="burger-top"></span>
+                            <span id="burger-middle"></span>
+                            <span id="burger-bottom"></span>
+                        </button>
                     </div>                    
                 </div>            
                 <div class="main-searchbar-mobile">
@@ -544,8 +548,8 @@
                                 <h1>Follow us on:</h1>
                                 <div class="footer-links--follow-buttons">
                                     <a id="follow-fb" class="follow-button" href="#"><span class="footer-icon icon-facebook"></span></a>
+                                    <a id="follow-tw" class="follow-button" href="#"><span class="footer-icon icon-linkedin-square"></span></a>
                                     <a id="follow-li" class="follow-button" href="#"><span class="footer-icon icon-x"></span></a>
-                                    <a id="follow-tw" class="follow-button" href="#"><span class="footer-icon icon-linkedin"></span></a>
                                     <a id="follow-ig" class="follow-button" href="#"><span class="footer-icon icon-instagram"></span></a>
                                 </div>
                             </div>

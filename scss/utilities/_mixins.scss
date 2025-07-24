@@ -37,7 +37,6 @@
 }
 
 @mixin nav-item-colors($color) {
-    transition: all 0.14s ease-in-out;
 
     &::after {
         border-top-color: $color;
@@ -52,12 +51,11 @@
     
     &::before {
         color: $color;
-        transition: 0.14s ease-in-out;
     }
     .submenu-banner {
         background-color: darken($color, 10%);
-        transition: 0.14s ease-in-out;
     }
+    
 }
 
 @mixin hoverColourChange($colour) {
