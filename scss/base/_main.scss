@@ -8,32 +8,38 @@ main {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
-    margin-bottom: 50px;
 
     h1, h2 {
         margin: 0;
-        font-weight: 400;
         color: $colour-heading;
+    }
+    h1 {
+        position: relative;
+        top: -5px;
+
         font-size: 42px;
-        letter-spacing: 0.5px;
+        font-weight: 400;
+        letter-spacing: 1px;
     }
     h2 {
+        letter-spacing: 0.4px;
         font-weight: 600;
         font-size: 36px;
-        padding-top: 5px;
+        padding-top: 10px;
         &::after {
+            position: relative;
+            top: 2px;
             font-family: icomoon;
             content: $icon-code-arrow;
-            font-size: 34px;
-            font-weight: 400;
-            margin-left: 10px;
+            font-size: 36px;
+            font-weight: 700;
+            margin-left: 5px;
         }
         &:hover {
             text-decoration: underline;
             cursor: pointer;
         }
     }
-
 
     @media (max-width: $screen-small) {
         h2 {
@@ -98,7 +104,6 @@ main {
         "section1 section2";
         gap: 30px;
         
-
         @media (max-width: $screen-medium) {
             grid-template-columns: auto;
             grid-template-rows: 1fr 1fr;
@@ -139,15 +144,13 @@ main {
             @media (max-width: $screen-small) { 
                 flex-direction: column;
             }
-
         }
     }
 
     .stars {
         display: flex;
         margin-bottom: 25px;
-        gap: 5px;
-        font-size: 48px;
+        font-size: 56px;
         color: $colour-gold-star;
     }
 
