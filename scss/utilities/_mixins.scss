@@ -19,11 +19,11 @@
         transition: 0.15s ease-in-out;
     }
     @if $has-arrow {
-        padding-bottom: 8px;
+        padding-bottom: 11px;
         &::after {
             position: relative;
             top: 3px;
-            margin-left: 10px;
+            margin-left: 6px;
             font-family: icomoon;
             font-size: 24px;
             font-weight: 600;
