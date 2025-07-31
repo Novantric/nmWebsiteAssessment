@@ -1,7 +1,7 @@
 footer {
     background-color: $color-primary;
     color: $white;
-    position: relative;
+    // position: relative;
     
     // All images in the footer will get inverted and brightened
     img {
@@ -51,7 +51,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     h1 {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .footer-links--follow-buttons {
@@ -65,8 +65,9 @@ footer {
         @include buttonstyles($colour-primary-dark);
         @include buttoniconstyles;
         display: flex;
-        width: 72px;
-        height: 64px;
+        width: 70px;
+        height: 58px;
+        border-radius: 0;
     }
 
     .follow-button {
@@ -95,11 +96,17 @@ footer {
 .footer-copyright {
     background-color: $colour-primary-dark; 
     width: 100%;
-    padding: 1px;
-    padding-top: 3px;
     text-align: left;
-    font-size: 13px;    
-    letter-spacing: 0.03rem;
+    font-size: 13px;   
+    letter-spacing: 0.025rem;
+
+    .container {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        flex-wrap: wrap;
+        padding-top: 4px;
+    }
     a {
         color: $white;
         text-decoration: none;
@@ -130,9 +137,31 @@ footer {
 @media (max-width: $screen-medium) {
     .footer-links--section{
         max-width: calc(50% - 4px);
-    }
-
-    .footer-links--section {
         min-width: 45%;
+    }
+}
+
+@media (max-width: $screen-small) {
+    .footer-links--section{
+        min-width: 100%;
+    }
+    .footer-links--follow-buttons {
+        max-width: 55%;
+    }
+    .footer-copyright {
+        // 38px to make room for the manage consent button
+        padding: 13px 0 38px 0;
+        p {
+            height: 5px;
+            margin: 0;
+        }
+        .container {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+        }
+    }
+    #copyright-divider {
+        display: none;
     }
 }

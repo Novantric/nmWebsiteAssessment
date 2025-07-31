@@ -423,9 +423,6 @@ header {
                 width: 170px;
                 margin-right: -20px;
             }
-            #button-nav {
-                width: auto;
-            }
             .submit-styles {
                 #button-search {
                     border-radius: 0 3px 3px 0;
@@ -490,14 +487,12 @@ header {
 }
 
 @media (max-width: $screen-mobile) {
-    header {
-        .main-heading { 
-            #header-logo {
-                width: 74%;
-            }
-            #button-nav {
-                width: auto;
-            }
+    .main-heading { 
+        #header-logo {
+            max-width: 74%;
+        }
+        #button-nav {
+            width: 100%;
         }
     }
 }
